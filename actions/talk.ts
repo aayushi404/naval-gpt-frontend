@@ -6,6 +6,7 @@ const navalTalk = async (question: string) => {
         const response = await axios.get(`${baseUrl!}/api/naval/talk?input=${question}`)
         if (response.status === 200) {
             const data = response.data
+            console.log(data)
             return {llm_answer:data.message}
         }
         throw new Error(response.data)
